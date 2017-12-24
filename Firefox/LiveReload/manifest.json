@@ -24,6 +24,6 @@
             "128": "icon128.png" },
   "browser_action": {
     "default_title": "Enable LiveReload",
-    "default_icon": "IconDisabled.png"
+    "default_icon": "IconDisabled.svg"
   }
 }

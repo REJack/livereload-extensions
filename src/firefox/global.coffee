@@ -15,7 +15,7 @@ ToggleCommand =
   update: (tabId) ->
     status = LiveReloadGlobal.tabStatus(tabId)
     browser.browserAction.setTitle { tabId, title: status.buttonToolTip }
-    browser.browserAction.setIcon { tabId, path: { '19' : status.buttonIcon, '38' : status.buttonIconHiRes } }
+    browser.browserAction.setIcon { tabId, path: status.buttonIconSVG }
 
 
 browser.browserAction.onClicked.addListener (tab) ->
