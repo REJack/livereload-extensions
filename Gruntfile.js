@@ -32,14 +32,6 @@ module.exports = function(grunt) {
           'Firefox/LiveReload/devtools.js': ['src/firefox/devtools.coffee'],
           'Firefox/LiveReload/livereload.js': ['src/livereload-js.coffee']
         }
-      },
-      'firefox-dark': {
-        files: {
-          'Firefox/LiveReload-Dark/global.js': ['src/firefox/global.coffee'],
-          'Firefox/LiveReload-Dark/injected.js': ['src/firefox/injected.coffee'],
-          'Firefox/LiveReload-Dark/devtools.js': ['src/firefox/devtools.coffee'],
-          'Firefox/LiveReload-Dark/livereload.js': ['src/livereload-js.coffee']
-        }
       }
     },
 
@@ -64,14 +56,6 @@ module.exports = function(grunt) {
           { expand: true, cwd: 'Firefox/LiveReload', src: ['**.{json,js,html,png,svg}'], dest: './' }
         ]
       },
-      'firefox-dark': {
-        options: {
-          archive: 'dist/<%= pkg.version %>/LiveReload-Dark-<%= pkg.version %>-Firefox.zip'
-        },
-        files: [
-          { expand: true, cwd: 'Firefox/LiveReload-Dark', src: ['**.{json,js,html,png,svg}'], dest: './' }
-        ]
-      },
       'firefox-src': {
         options: {
           archive: 'dist/<%= pkg.version %>/LiveReload-<%= pkg.version %>-Firefox.src.zip'
@@ -91,7 +75,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['build']);
 
   grunt.registerTask('chrome', ['browserify:chrome', 'compress:chrome']);
-  grunt.registerTask('firefox', ['browserify:firefox', 'compress:firefox', 'browserify:firefox-dark', 'compress:firefox-dark']);
+  grunt.registerTask('firefox', ['browserify:firefox', 'compress:firefox']);
   grunt.registerTask('firefox-src', ['compress:firefox-src']);
   grunt.registerTask('all', ['chrome', 'firefox', 'firefox-src']);
 
