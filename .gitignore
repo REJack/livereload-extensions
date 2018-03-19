@@ -2,7 +2,6 @@ node_modules
 LiveReload.safariextension/*.js
 Chrome/LiveReload/*.js
 Firefox/LiveReload/*.js
-Firefox/LiveReload-Dark/*.js
 lib/*.js
 lib/*/*.js
 /dist
